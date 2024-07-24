@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-boot-redis
+
+  redis:
+    host: localhost
+    port: 6379
+    # 如果你的 Redis 服务器需要密码验证，可以添加如下配置
+    # password: yourpassword
+    # 数据库索引（默认为 0）
+    database: 0
+    # 连接池配置（可选）
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms

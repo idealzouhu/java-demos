@@ -1,4 +1,4 @@
-### Java-demos
+### java-demos
 
  [java-thread](java-thread) ：线程状态查询，线程常用方式，线程池的使用。
 

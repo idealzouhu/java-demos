@@ -1,0 +1,1 @@
+`StringRedisTemplate` 是 `RedisTemplate<String, String>` 的一种快捷实现，它已经预先配置了序列化器，专门用于处理字符串类型的键和值。
