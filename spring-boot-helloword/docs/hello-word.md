@@ -1,16 +1,38 @@
-> 本文档实现SpringBoot  hello word 程序，翻译于[Spring | Quickstart](https://spring.io/quickstart)
 
 [TOC]
 
 
 
 # 项目创建步骤
-
+> 本文档实现SpringBoot  hello word 程序，翻译于[Spring | Quickstart](https://spring.io/quickstart)/
+>
+> 项目代码地址为：
 ## 1.1 创建项目
 
 在官网[Spring Initializr](https://start.spring.io/)上创建项目
 
 ![image-20231127225358966](images/image-20231127225358966.png)
+
+
+
+其中，通常会涉及到以下几个重要的项目信息：
+
+1. **Group（组织或者公司的唯一标识）：** 在Maven或Gradle项目中，Group通常用于唯一标识组织或公司的项目，通常使用逆域名（反向域名）的形式，例如：`com.example`。
+2. **Artifact（项目唯一标识）：** Artifact是项目在Group中的唯一标识符，通常表示项目的名称或者模块名称，例如：`my-project`。**不能有大写，都是小写，不同单词之间用 “-” 隔开**。
+3. **Name（项目显示名称）：** 声明了一个对于用户更为友好的项目名称（默认等同`Artifact`），不是必须的。推荐为每个pom声明name，以方便信息交流。。 例如：`My Project`。
+4. **Package name（包名）：** Package name是Java包的命名，用于组织和管理项目中的类和文件，通常是根据Group和Artifact来构建的。**Package name 应该全部使用小写字母，将连字符 `-` 替换为点 `.` **。 例如：`com.example.myproject`。
+
+```
+<groupId>com.zouhu</groupId>
+<artifactId>helloword</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<name>helloword</name>
+<description>Demo project for Spring Boot</description>
+```
+
+`Grounp+Artifact`就相当于**项目的坐标**，保证了项目的唯一性。如果你要把你项目弄到maven本地仓库去，想要找到你的项目就必须根据这两个id去查找。
+
+
 
 
 
