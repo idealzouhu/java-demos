@@ -1,10 +1,14 @@
 ### java-demos
 
- [java-thread](java-thread) ：线程状态查询，线程常用方式，线程池的使用。
+[java-annotation](java-annotation)：自定义注解，并且通过反射在运行时获取注解信息
+
+[java-thread](java-thread) ：线程状态查询，线程常用方式，线程池的使用。
 
 
 
 ### spring-boot-demos
+
+ [spring-boot-aop](spring-boot-aop) ：给出 AOP 的使用方法 ， 并且给出打印日志的案例。
 
 [spring-boot-helloword](./spring-boot-helloword)：创建Hello word项目。
 
@@ -12,7 +16,9 @@
 
 
 
-### Redis
+
+
+### redis
 
  [spirng-boot-redis](spirng-boot-redis) ：利用 RedisTemplate 操作 Redis里面的数据
 
