@@ -4,6 +4,8 @@
 
 [java-thread](java-thread) ：线程状态查询，线程常用方式，线程池的使用。
 
+[java-exception](java-exception) ：研究自定义异常的使用方法，并给出自定义异常的案例
+
 
 
 ### spring-boot-demos
@@ -16,11 +18,15 @@
 
 
 
-
-
 ### redis
 
  [spirng-boot-redis](spirng-boot-redis) ：利用 RedisTemplate 操作 Redis里面的数据
+
+
+
+
+
+### design-pattern
 
 
 
