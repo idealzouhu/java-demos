@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: log
+
+## 日志配置
+logging:
+  # 指定日志配置文件的位置，通常为logback.xml
+#  config: classpath:config/logback-spring.xml
+#  config: classpath:config/logback.xml
+  # 配置日志级别
+  level:
+    com.zouhu.log: "trace"
+    # Spring Boot Web相关组件的日志级别设置为DEBUG
+    org.springframework.web: "debug"
+    # Hibernate相关组件的日志级别设置为ERROR
+    org.hibernate: "error"
