@@ -30,9 +30,9 @@
 
 ### 显示锁
 
- [什么是 Java 显示锁.md](什么是 Java 显示锁.md) 
+ [什么是 Java 显示锁.md](什么是 Java 显示锁.md) ：介绍 Java 显示锁的 Lock 接口，并给出显示锁和内置锁的区别。
 
- [ReentranLock 显示锁.md](ReentranLock 显示锁.md) 
+ [ReentranLock 显示锁.md](ReentranLock 显示锁.md) ：简单地介绍 ReentranLock 显示锁。
 
 
 

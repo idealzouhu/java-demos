@@ -19,9 +19,11 @@
 
 ### 线程基础
 
- [ThreadLocal 类.md](ThreadLocal 类.md) 
+ [Thread 类的属性和方法.md](Thread 类的属性和方法.md) ：给出线程的基本属性和常用方法
 
- [Thread 类的属性和方法.md](Thread 类的属性和方法.md) 
+ [ThreadLocal 类.md](ThreadLocal 类.md) ：分析 ThreadLocal 类的底层实现原理
+
+
 
 
 
