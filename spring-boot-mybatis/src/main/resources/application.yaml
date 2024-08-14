@@ -1,6 +1,3 @@
 spring:
   application:
     name: spring-boot-mybatis
-
-#mybatis:
-#  mapper-locations: classpath:mybatis/*Mapper.xml

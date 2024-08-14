@@ -30,9 +30,9 @@
 
 ### mybatis
 
-[spring-boot-mybatis](spring-boot-mybatis) ：使用 `mybatis` 依赖来操作数据库。
+[spring-boot-mybatis](spring-boot-mybatis) ：使用 `mybatis` 依赖来操作数据库。后续使用该项目继续深入研究 Mybatis 框架。
 
-
+[spring-boot-mybatis-starter](spring-boot-mybatis-starter) : 使用 `mybatis-spring-boot-starter` 依赖来操作数据库。
 
 
 

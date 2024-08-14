@@ -1,12 +1,14 @@
 [TOC]
 
+> 本文源代码地址为 [java-demos/spring-boot-mybatis-starter](https://github.com/idealzouhu/java-demos/tree/main/spring-boot-mybatis-starter)
+
 ## 一、项目创建
 
 ### 1.1 创建 Idea 项目
 
-通过 [start.springboot.io](https://start.springboot.io/) 创建工程。选择 `MySQL Driver`、`Spring Web` 、`Lombock`基本依赖，点击 “GENERATE” 下载到本地后，导入到IDEA中。
+通过 [start.springboot.io](https://start.springboot.io/) 创建工程。选择 `MySQL Driver`、`Spring Web` 、`MyBatis Framework`,  `Lombock`基本依赖，点击 “GENERATE” 下载到本地后，导入到IDEA中。
 
-![image-20240813212953319](images/image-20240813212953319.png)
+![image-20240813195243138](images/image-20240813195243138.png)
 
 
 
@@ -22,9 +24,9 @@ mybatis 的依赖主要有以下两种:
 
 ```xml
 <dependency>
-    <groupId>org.mybatis</groupId>
-    <artifactId>mybatis</artifactId>
-    <version>3.3.2</version>
+    <groupId>org.mybatis.spring.boot</groupId>
+    <artifactId>mybatis-spring-boot-starter</artifactId>
+    <version>3.0.3</version>
 </dependency>
 
 <dependency>
@@ -73,130 +75,34 @@ $ source D:/spring-boot-redis/src/main/resources/sql/db_reggie.sql
 
 ### 2.2 配置数据库连接信息
 
-数据库的连接配置内容在  `mybatis-config.xml` 里面设置。
+数据库的连接配置内容在  `application.yaml` 里面设置。
 
 设置内容如下：
 
-```xml
-<configuration>
-    <properties>
-        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/reggie?useSSL=false&amp;serverTimezone=UTC"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-    </properties>
-
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
-                <property name="url" value="${url}"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
-            </dataSource>
-        </environment>
-    </environments>
-</configuration>
+```yaml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/reggie?useSSL=false&amp;serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
 ```
 
 
 
-## 三、MyBatis 配置
-
-### 3.1 创建配置文件 mybatis-config.xml
-
-新建 `src/main/resources/mybatis-config.xml`， 设置数据源和外部的 `mapper.xml` 文件。
-
-具体内容如下：
-
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
-    <properties>
-        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/reggie?useSSL=false&amp;serverTimezone=UTC"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-    </properties>
-
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
-                <property name="url" value="${url}"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
-            </dataSource>
-        </environment>
-    </environments>
-
-    <!-- 注册mapper(映射器)  -->
-    <!-- 使用相对于类路径 mybatis-config.xml 的资源引用  -->
-    <mappers>
-        <mapper resource="mapper/UserMapper.xml"/>
-    </mappers>
-
-</configuration>
-```
-
-
-
-### 3.2 创建 SqlSessionFactory 实例
-
-<font color="red">**每个基于 MyBatis 的应用都是以一个 `SqlSessionFactory` 的实例为核心的**</font>。`SqlSessionFactory` 的实例可以通过 `SqlSessionFactoryBuilder` 获得。而 **`SqlSessionFactoryBuilder` 则可以从 XML 配置文件或一个预先配置的 Configuration 实例来构建出 `SqlSessionFactory` 实例**。具体细节查看 [入门_MyBatis中文网](https://mybatis.net.cn/getting-started.html)
-
-```java
-@Configuration
-public class MyBatisConfig {
-    @Bean
-    public SqlSessionFactory sqlSessionFactory() throws Exception {
-        String resource = "mybatis-config.xml";
-        try {
-            InputStream inputStream = Resources.getResourceAsStream(resource);
-            System.out.println("Resource loaded successfully.");
-            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-            return sqlSessionFactory;
-        } catch (Exception e) {
-            System.err.println("Failed to create SqlSessionFactory: " + e.getMessage());
-            throw e;
-        }
-    }
-}
-
-```
-
-既然有了 `SqlSessionFactory`，顾名思义，我们可以从中获得  `SqlSession`  的实例。<font color="red">**`SqlSession` 提供了在数据库执行 SQL 命令所需的所有方法**</font>。我们可以通过 `SqlSession` 实例来直接执行已映射的 SQL 语句。例如：
-
-```java
-try (SqlSession session = sqlSessionFactory.openSession()) {
-    UserMapper mapper = session.getMapper(UserMapper.class);
-    List<User> users = mapper.selectAll();
-    for (User user : users) {
-        System.out.println(user);
-    }
-}
-```
-
-
-
-## 四、项目测试和运行
+## 三、项目测试和运行
 
 在配置数据库和 MyBatis 后，项目步骤为：
 
 1. **创建实体类**：定义与数据库表结构相对应的 Java 类，通常包括属性、构造方法、getter 和 setter 方法。
 2. **创建映射文件**：使用 XML 文件定义数据库操作语句（如查询、插入、更新和删除），并设置结果映射到 Java 对象的规则。
 3. **创建映射接口**：为每个映射文件创建对应的 Java 接口，定义与映射文件中相同的操作方法。
-4. **配置映射关系**：在 `mybatis-config.xml` 文件中，将映射文件和映射接口关联，指定它们的路径和命名空间。=
+4. **配置映射关系**：在 `application.yaml` 文件中，将映射文件和映射接口关联，指定它们的路径和命名空间。
 5. **调用Mapper接口进行查询**：使用 `SqlSessionFactory` 创建一个 `SqlSession` 实例，然后利用获得的 Mapper 接口实例调用方法执行数据库操作。
 
 
 
-### 4.1 创建实体类
+### 3.1 创建实体类
 
 新建文件 `com/zouhu/springboot/mybatis/entity/User.java`， 内容如下：
 
@@ -241,7 +147,7 @@ public class User implements Serializable {
 
 
 
-### 4.2 创建 mapper.xml 文件
+### 3.2 创建 mybatis.xml 文件
 
 为了数据库持久层的实现，需要添加对应的MyBatis框架的XML映射文件，MyBatis的XML映射文件固定格式如下：
 
@@ -253,7 +159,7 @@ public class User implements Serializable {
 </mapper>
 ```
 
-现在，我们可以创建 User 类对应的文件 `com/zouhu/springboot/mybatis/mapper/UserMapper.java`，实现查询所有用户的方法  `selectAll`。具体代码如下：
+现在，我们可以创建 User 类对应的文件 `com/zouhu/springboot/mybatis/starter/mapper/UserMapper.java`，实现查询所有用户的方法  `selectAll`。具体代码如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -267,7 +173,7 @@ public class User implements Serializable {
 
 
 
-### 4.3 创建 mapper 接口
+### 3.3 创建 mapper 接口
 
 新建 `com/zouhu/springboot/mybatis/mapper/UserMapper.java` ， 具体内容如下：
 
@@ -283,40 +189,38 @@ public interface UserMapper {
 }
 ```
 
+其中， `selectAll` 方法名对应`com/zouhu/springboot/mybatis/starter/mapper/UserMapper.java` 文件中mapper 的 id 属性。
 
 
-### 4.4 配置映射关系
 
-在 `mybatis-config.xml` 文件中，使用 `<mappers>` 标签将映射文件和对应的 Mapper 接口关联， 指定映射文件的位置。
+### 3.4 配置映射关系
 
-```xml
-  <!-- 注册mapper(映射器)  -->
-    <!-- 使用相对于类路径 mybatis-config.xml 的资源引用  -->
-    <mappers>
-        <mapper resource="mapper/UserMapper.xml"/>
-    </mappers>
+在 `application.yaml` 中， 将映射文件和映射接口关联，指定它们的路径和命名空间。
+
+```yaml
+mybatis:
+  # 配置mapper.xml文件位置
+  mapper-locations: classpath:mapper/UserMapper.xml
 ```
 
 
 
-### 4.5 测试  mapper 接口
+### 3.5 测试  mapper 接口
 
 创建测试方法，具体内容如下：
 
 ```java
 @SpringBootTest
-class MyBatisConfigTest {
+class UserMapperTest {
+
     @Autowired
-    private SqlSessionFactory sqlSessionFactory;
+    private UserMapper userMapper;
 
     @Test
-    void test() {
-        try (SqlSession session = sqlSessionFactory.openSession()) {
-            UserMapper mapper = session.getMapper(UserMapper.class);
-            List<User> users = mapper.selectAll();
-            for (User user : users) {
-                System.out.println(user);
-            }
+    void selectAll() {
+        List<User> users = userMapper.selectAll();
+        for (User user : users) {
+            System.out.println(user);
         }
     }
 }
