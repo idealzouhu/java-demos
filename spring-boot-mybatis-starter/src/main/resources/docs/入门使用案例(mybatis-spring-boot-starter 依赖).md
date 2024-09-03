@@ -20,7 +20,7 @@ mybatis 的依赖主要有以下两种:
 
 - **mybatis-spring-boot-starter**: 针对 Spring Boot 的简化封装，提供开箱即用的体验。自动配置了 MyBatis 的基本组件，如 SqlSessionFactory 和 MapperScannerConfigurer。
 
-本文选择 **mybatis** 依赖，具体版本查看 [Maven Repository: org.mybatis (mvnrepository.com) ](https://mvnrepository.com/artifact/org.mybatis)
+本文选择 **mybatis-spring-boot-starter** 依赖，具体版本查看 [Maven Repository: org.mybatis (mvnrepository.com) ](https://mvnrepository.com/artifact/org.mybatis)
 
 ```xml
 <dependency>
