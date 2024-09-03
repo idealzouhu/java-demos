@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.util.PriorityQueue</OriginalElement>
+  <nodes>
+    <node x="-183.0121951219512" y="219.81707317073176">java.util.AbstractCollection</node>
+    <node x="247.12195121951214" y="346.0">java.lang.SuppressWarnings</node>
+    <node x="-32.0" y="106.0">java.util.Collection</node>
+    <node x="-24.024390243902417" y="472.18292682926824">java.util.PriorityQueue</node>
+    <node x="77.0" y="340.5487804878049">java.io.Serializable</node>
+    <node x="-23.5" y="26.5">java.lang.Iterable</node>
+    <node x="81.0" y="226.0">java.util.Queue</node>
+    <node x="-170.0121951219512" y="340.5487804878049">java.util.AbstractQueue</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.PriorityQueue" target="java.io.Serializable" relationship="REALIZATION">
+      <point x="-23.37804878048786" y="-19.24390243902434" />
+      <point x="43.097560975609724" y="440.9908536585366" />
+      <point x="103.10162601626013" y="440.9908536585366" />
+      <point x="103.10162601626013" y="422.9115853658536" />
+      <point x="102.7520325203252" y="422.9115853658536" />
+      <point x="-40.2479674796748" y="15.585365853658516" />
+    </edge>
+    <edge source="java.util.Queue" target="java.util.Collection" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="145.0" y="166.64634146341461" />
+      <point x="83.5" y="166.64634146341461" />
+      <point x="38.5" y="14.0" />
+    </edge>
+    <edge source="java.util.Collection" target="java.lang.Iterable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="java.util.PriorityQueue" target="java.util.AbstractQueue" relationship="GENERALIZATION">
+      <point x="-63.87804878048786" y="-18.256097560975604" />
+      <point x="2.597560975609724" y="439.86585365853665" />
+      <point x="-75.01219512195121" y="439.86585365853665" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="java.util.AbstractQueue" target="java.util.Queue" relationship="REALIZATION">
+      <point x="47.5" y="-14.0" />
+      <point x="-27.51219512195121" y="303.0914634146341" />
+      <point x="145.0" y="303.0914634146341" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="java.util.AbstractCollection" target="java.util.Collection" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-75.01219512195121" y="166.64634146341461" />
+      <point x="6.5" y="166.64634146341461" />
+      <point x="-38.5" y="14.0" />
+    </edge>
+    <edge source="java.util.AbstractQueue" target="java.util.AbstractCollection" relationship="GENERALIZATION">
+      <point x="-0.42682926829269263" y="-14.04878048780489" />
+      <point x="-75.4390243902439" y="294.18292682926835" />
+      <point x="-75.01219512195121" y="294.18292682926835" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="java.util.PriorityQueue" target="java.lang.SuppressWarnings" relationship="REALIZATION">
+      <point x="68.48780487804873" y="-15.29268292682923" />
+      <point x="134.96341463414632" y="420.3658536585366" />
+      <point x="339.62195121951214" y="420.3658536585366" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0123456790123457" showDependencies="false" x="133.97560975609753" y="300.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -4,6 +4,8 @@
 
 [java-exception](java-exception) ：研究自定义异常的使用方法，并给出自定义异常的案例。
 
+[java-collections](java-collections) ：给出 java 线程安全和线程不安全的集合使用案例。
+
 [java-thread](java-thread) ：线程状态查询，线程常用方式，线程池的使用。
 
 [java-lock](java-lock) ：分析 Java 内置锁和 Java 显示锁如何解决自增线程不安全。
@@ -12,7 +14,7 @@
 
 ### spring-boot-demos
 
-[spring-boot-aop](spring-boot-aop) ：给出 AOP 的使用方法 ， 并且给出打印日志的案例。
+[spring-boot-aop](spring-boot-aop) ： AOP 的使用方法 ， 并且给出打印日志的案例。
 
 [spring-boot-helloword](./spring-boot-helloword)：创建Hello word项目。
 
