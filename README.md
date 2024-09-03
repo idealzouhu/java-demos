@@ -1,5 +1,7 @@
 ### java-demos
 
+[java-datatype](java-datatype) : 分析 Java 的基本数据类型，并研究比较常用的 Java 类( 例如 StringBuffer 、StringBuilder )。
+
 [java-annotation](java-annotation)：自定义注解，并且通过反射在运行时获取注解信息。
 
 [java-exception](java-exception) ：研究自定义异常的使用方法，并给出自定义异常的案例。
@@ -14,7 +16,7 @@
 
 ### spring-boot-demos
 
-[spring-boot-aop](spring-boot-aop) ： AOP 的使用方法 ， 并且给出打印日志的案例。
+[spring-boot-aop](spring-boot-aop) :  AOP 的使用方法 ， 并且给出打印日志的案例。
 
 [spring-boot-helloword](./spring-boot-helloword)：创建Hello word项目。
 
