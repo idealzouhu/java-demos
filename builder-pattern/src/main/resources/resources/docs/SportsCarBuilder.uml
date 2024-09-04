@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.zouhu.builder.pattern.simple.SportsCarBuilder</OriginalElement>
+  <nodes>
+    <node x="-836.6796536796537" y="902.6017316017314">com.zouhu.builder.pattern.simple.TruckBuilder</node>
+    <node x="-665.1428571428571" y="596.7510822510824">com.zouhu.builder.pattern.simple.Car</node>
+    <node x="-1317.4372294372295" y="603.0043290043291">com.zouhu.builder.pattern.simple.Director</node>
+    <node x="-1173.300865800866" y="902.6017316017314">com.zouhu.builder.pattern.simple.SportsCarBuilder</node>
+    <node x="-980.6515151515152" y="603.0043290043291">com.zouhu.builder.pattern.simple.CarBuilder</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.zouhu.builder.pattern.simple.TruckBuilder" target="com.zouhu.builder.pattern.simple.CarBuilder" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="-757.6796536796537" y="835.7619047619046" />
+      <point x="-912.2034632034632" y="835.7619047619046" />
+      <point x="-16.05194805194799" y="86.4632034632034" />
+    </edge>
+    <edge source="com.zouhu.builder.pattern.simple.CarBuilder" target="com.zouhu.builder.pattern.simple.Car" relationship="TO_ONE">
+      <point x="87.1341991341992" y="6.887445887445779" />
+      <point x="-575.1428571428571" y="694.8917748917748" />
+      <point x="0.0" y="96.5" />
+    </edge>
+    <edge source="com.zouhu.builder.pattern.simple.SportsCarBuilder" target="com.zouhu.builder.pattern.simple.CarBuilder" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="-1085.800865800866" y="835.7619047619046" />
+      <point x="-913.077922077922" y="835.7619047619046" />
+      <point x="-16.9264069264068" y="87.33766233766232" />
+    </edge>
+    <edge source="com.zouhu.builder.pattern.simple.Director" target="com.zouhu.builder.pattern.simple.CarBuilder" relationship="TO_ONE">
+      <point x="0.0" y="-50.5" />
+      <point x="-1231.4372294372295" y="664.2857142857142" />
+      <point x="-87.83982683982686" y="-23.718614718614845" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.1435643564356435" showDependencies="true" x="-837.0" y="722.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
