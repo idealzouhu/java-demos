@@ -42,6 +42,8 @@
 
 ### design-pattern
 
+ [singeleton-pattern](singeleton-pattern) ：分析懒汉式单例模式和饿汉式单例模式的使用。
+
 
 
 
