@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-boot-test
+
+# 自定义依赖 email-spring-boot-starter 中的配置信息
+mail:
+  host: smtp.example.com
+  port: 587
+  username: user@example.com
+  password: password
+  from: no-reply@example.com

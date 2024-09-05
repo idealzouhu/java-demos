@@ -22,6 +22,8 @@
 
 [spring-boot-restful-service](./spring-boot-restful-service)：创建一个简单的restful web service项目，熟悉基本的restful web service构建流程。
 
+[spring-boot-starter](spring-boot-starter) ：自定义 starter， 并测试 starter 的运行情况。
+
 
 
 ### redis
@@ -44,7 +46,7 @@
 
  [singeleton-pattern](singeleton-pattern) ：分析懒汉式单例模式和饿汉式单例模式的使用。
 
-
+ [builder-pattern](builder-pattern) ：研究建造者模式、@Builder 注解的使用。
 
 
 
