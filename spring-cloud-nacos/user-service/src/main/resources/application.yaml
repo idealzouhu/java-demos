@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      # nacos 注册中心
+      discovery:
+        server-addr: 127.0.0.1:8848   # nacos 注册中心地址
+        namespace: public
+      # nacos 配置中心
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml    # 配置文件类型，支持 `properties`, `yaml` 等
+        namespace: public             # 可以选择命名空间，默认是 public
+        group: DEFAULT_GROUP         # 配置分组，默认是 DEFAULT_GROUP
+        # 配置文件导入检查，默认为 true
+        import-check:
+          enabled: false
+        refresh-enabled: true
+  config:
+    import: nacos:user-service.yaml?refresh=true
+
+
+server:
+  port: 8080
