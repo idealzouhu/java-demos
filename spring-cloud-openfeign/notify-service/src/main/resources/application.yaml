@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: notify-service
+  cloud:
+    nacos:
+      # nacos 注册中心地址
+      discovery:
+        server-addr: 127.0.0.1:8848
+      # nacos 配置中心地址
+      config:
+        server-addr: 127.0.0.1:8848
+        import-check:
+          enabled: false
+
+server:
+  port: 9002
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        loggerLevel: HEADERS
+        readTimeout: 5000
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true

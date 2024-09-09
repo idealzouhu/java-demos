@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: pay-service
+  cloud:
+    nacos:
+      # nacos 注册中心地址
+      discovery:
+        server-addr: 127.0.0.1:8848
+#      # 设置访问 Nacos 服务器的认证信息
+#      password: nacos
+#      username: nacos
+      # nacos 配置中心地址
+      config:
+        server-addr: 127.0.0.1:8848
+        import-check:
+          enabled: false
+
+server:
+  port: 9001
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        loggerLevel: HEADERS
+        readTimeout: 5000
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
