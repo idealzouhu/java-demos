@@ -3,20 +3,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zouhu</groupId>
-    <artifactId>spring-cloud-openfeign</artifactId>
+    <artifactId>spring-cloud-sentinel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <!-- 指定 Maven 项目的打包方式，pom 用于聚合项目的管理文件，不直接构建为可执行文件 -->
-    <packaging>pom</packaging>
-    <name>spring-cloud-openfeign</name>
-    <description>Demo project for Spring Boot</description>
-
-    <modules>
-        <module>user-service</module>
-        <module>order-service</module>
-        <module>pay-service</module>
-        <module>notify-service</module>
-    </modules>
-
+    <name>spring-cloud-sentinel</name>
+    <description>Demo project for Spring Cloud Sentinel</description>
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,21 +26,19 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
+        <!-- 替换 spring-cloud-starter-openfeign 底层使用的 Http Client -->
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-okhttp</artifactId>
         </dependency>
 
+        <!-- spring-cloud-starter-openfeign 不再使用 Ribbon -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
@@ -60,6 +48,12 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+        <!-- sentinel 与 sentinel控制台通信所需的依赖 -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
         </dependency>
 
         <dependency>

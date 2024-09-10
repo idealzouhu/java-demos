@@ -26,6 +26,16 @@
 
 
 
+### spring-cloud-demos
+
+ [spring-cloud-openfeign](spring-cloud-openfeign) ： 研究 openfeign 的使用方法。
+
+ [spring-cloud-nacos](spring-cloud-nacos) ：研究 nacos 的服务注册与发现、自动配置。
+
+ [spring-cloud-sentinel](spring-cloud-sentinel) ：给出不同规则的实现案例。
+
+
+
 ### redis
 
 [spirng-boot-redis](spirng-boot-redis) ：利用 RedisTemplate 操作 Redis里面的数据。
