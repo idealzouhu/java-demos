@@ -1,3 +1,5 @@
+[TOC]
+
 ### java-demos
 
 [java-datatype](java-datatype) : 分析 Java 的基本数据类型，并研究比较常用的 Java 类( 例如 StringBuffer 、StringBuilder )。
@@ -8,7 +10,7 @@
 
 [java-collections](java-collections) ：给出 java 线程安全和线程不安全的集合使用案例。
 
-[java-thread](java-thread) ：线程状态查询，线程常用方式，线程池的使用。
+[java-thread](java-thread) ：线程状态查询，线程常用方式，线程池的使用，其中重点分析了 threadlocal 的使用情况。
 
 [java-lock](java-lock) ：分析 Java 内置锁和 Java 显示锁如何解决自增线程不安全。
 
@@ -26,6 +28,8 @@
 
 
 
+
+
 ### spring-cloud-demos
 
  [spring-cloud-openfeign](spring-cloud-openfeign) ： 研究 openfeign 的使用方法。
@@ -36,19 +40,21 @@
 
 
 
-### redis
+
+
+### middleware
 
 [spirng-boot-redis](spirng-boot-redis) ：利用 RedisTemplate 操作 Redis里面的数据。
-
-
-
-
-
-### mybatis
 
 [spring-boot-mybatis](spring-boot-mybatis) ：使用 `mybatis` 依赖来查询数据库。后续使用该项目继续深入研究 Mybatis 框架。
 
 [spring-boot-mybatis-starter](spring-boot-mybatis-starter) : 使用 `mybatis-spring-boot-starter` 依赖来查询数据库。
+
+[spring-boot-rocketmq](spring-boot-rocketmq) :  使用 `rocketmq-client-java` 生产和消费不同类型的消息。
+
+[spring-boot-rocketmq-starter](spring-boot-rocketmq-starter) :  研究 `rocketmq-spring-boot-starter` 的使用方法
+
+
 
 
 
@@ -57,6 +63,8 @@
  [singeleton-pattern](singeleton-pattern) ：分析懒汉式单例模式和饿汉式单例模式的使用。
 
  [builder-pattern](builder-pattern) ：研究建造者模式、@Builder 注解的使用。
+
+
 
 
 

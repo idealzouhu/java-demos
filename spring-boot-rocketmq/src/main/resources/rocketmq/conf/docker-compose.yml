@@ -1,0 +1,73 @@
+# 定义该文件的格式版本
+version: '3.8'
+
+# 定义一组服务，这些服务构成一个RocketMQ集群
+services:
+  # NameServer服务，负责管理和发现RocketMQ集群中的其他组件
+  namesrv:
+    # 指定NameServer服务所使用的镜像
+    image: apache/rocketmq:5.3.0
+    # 定义容器的名称
+    container_name: rmqnamesrv
+    # 将容器的9876端口映射到主机的9876端口
+    ports:
+      - 9876:9876
+    # 将NameServer服务加入到名为rocketmq的网络中
+    networks:
+      - rocketmq
+    # 启动时执行的命令
+    command: sh mqnamesrv
+
+  # Broker服务，负责存储消息和提供消息的收发功能
+  broker:
+    # 指定Broker服务所使用的镜像
+    image: apache/rocketmq:5.3.0
+    # 定义容器的名称
+    container_name: rmqbroker
+    # 将容器的多个端口映射到主机的对应端口
+    ports:
+      - 10909:10909
+      - 10911:10911
+      - 10912:10912
+    # 设置环境变量，指定NameServer的地址
+    environment:
+      - NAMESRV_ADDR=rmqnamesrv:9876
+    # 确保在启动Broker之前，NameServer已经启动
+    depends_on:
+      - namesrv
+    # 将Broker服务加入到名为rocketmq的网络中
+    networks:
+      - rocketmq
+    # 启动时执行的命令
+    command: sh mqbroker
+
+  # Proxy服务，提供HTTP协议的访问接口
+  proxy:
+    # 指定Proxy服务所使用的镜像
+    image: apache/rocketmq:5.3.0
+    # 定义容器的名称
+    container_name: rmqproxy
+    # 将Proxy服务加入到名为rocketmq的网络中
+    networks:
+      - rocketmq
+    # 确保在启动Proxy之前，Broker和NameServer已经启动
+    depends_on:
+      - broker
+      - namesrv
+    # 将容器的两个端口映射到主机的对应端口
+    ports:
+      - 8080:8080
+      - 8081:8081
+    # 设置在服务失败时自动重启
+    restart: on-failure
+    # 设置环境变量，指定NameServer的地址
+    environment:
+      - NAMESRV_ADDR=rmqnamesrv:9876
+    # 启动时执行的命令
+    command: sh mqproxy
+
+# 定义网络，用于这些服务之间的通信
+networks:
+  rocketmq:
+    # 指定网络的驱动类型为bridge
+    driver: bridge

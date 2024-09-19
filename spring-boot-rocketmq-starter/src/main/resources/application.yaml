@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: spring-boot-rocketmq-starter
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: my-producer_test-topic-1
+    send-message-timeout: 60000
+    retry-times-when-send-failed: 2
+    retry-times-when-send-async-failed: 2
+#  consumer:
+#    group: my-consumer-group
+
+server:
+  port: 9001

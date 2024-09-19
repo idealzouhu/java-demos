@@ -1,6 +1,8 @@
 package org.zouhu.thread.threadlocal;
 
 /**
+ *  验证 ThreadLocal 的线程隔离特性
+ *
  * @author zouhu
  * @data 2024-08-29 18:16
  */
