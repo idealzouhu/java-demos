@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-boot-idempotent
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 123456
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: producer-group_idempotent-topic     # 设置生产者组
+    send-message-timeout: 60000
+    retry-times-when-send-failed: 1           # 默认是2次，可以根据实际情况调整
+    retry-times-when-send-async-failed: 1
+  consumer:
+    group: consumer-group_idempotent-topic  # 替换为实际的消费者组
+
+server:
+  port: 9001
