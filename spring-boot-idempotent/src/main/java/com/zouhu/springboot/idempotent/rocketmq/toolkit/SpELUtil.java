@@ -43,16 +43,22 @@ public class SpELUtil {
      * @return 解析的字符串值
      */
     public static Object parse(String spEl, Method method, Object[] contextObj) {
-        DefaultParameterNameDiscoverer discoverer = new DefaultParameterNameDiscoverer();
+        // 创建表达式解析器, 解析 spEL 表达式
         ExpressionParser parser = new SpelExpressionParser();
         Expression exp = parser.parseExpression(spEl);
+
+        // 获取方法中的参数名称
+        DefaultParameterNameDiscoverer discoverer = new DefaultParameterNameDiscoverer();
         String[] params = discoverer.getParameterNames(method);
+
+        // 将方法中的参数添加到上下文 context, 用于后续在 spEl 表达式中使用这些变量
         StandardEvaluationContext context = new StandardEvaluationContext();
         if (ArrayUtil.isNotEmpty(params)) {
             for (int len = 0; len < params.length; len++) {
                 context.setVariable(params[len], contextObj[len]);
             }
         }
+
         return exp.getValue(context);
     }
 }

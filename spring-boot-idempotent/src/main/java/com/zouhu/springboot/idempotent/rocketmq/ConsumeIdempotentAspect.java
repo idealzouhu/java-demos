@@ -48,7 +48,8 @@ public class ConsumeIdempotentAspect {
         Idempotent idempotent = getIdempotentAnnotation(joinPoint);
 
         // 生成全局唯一幂等标识
-        String uniqueKey = idempotent.uniqueKeyPrefix() + SpELUtil.parseKey(idempotent.key(), ((MethodSignature) joinPoint.getSignature()).getMethod(), joinPoint.getArgs());
+        String uniqueKey = idempotent.uniqueKeyPrefix() +
+                SpELUtil.parseKey(idempotent.key(), ((MethodSignature) joinPoint.getSignature()).getMethod(), joinPoint.getArgs());
         System.out.println("uniqueKey: " + uniqueKey);
 
         // 获取 uniqueKey 在去重表里面的 value
@@ -72,7 +73,7 @@ public class ConsumeIdempotentAspect {
             return null;
         }
 
-        // 情况二: absentAndGet 不为空, 不触发幂等处理逻辑,
+        // 情况二: absentAndGet 为空, 不触发幂等处理逻辑
         Object result;
         try {
             // 执行标记了消息队列防重复消费注解的方法
