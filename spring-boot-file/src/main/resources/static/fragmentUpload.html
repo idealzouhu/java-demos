@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Chunk Upload</title>
+</head>
+<body>
+<h2>File Chunk Upload with Resume</h2>
+<input type="file" id="fileInput">
+<button onclick="uploadFile()">Upload</button>
+<div id="progress"></div>
+
+<script>
+    const CHUNK_SIZE = 5 * 1024 * 1024;  // 1MB
+    let uploadedChunks = 0;
+
+    async function uploadFile() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+
+        if (!file) {
+            alert('Please select a file!');
+            return;
+        }
+
+        let totalChunks = Math.ceil(file.size / CHUNK_SIZE);
+        while (uploadedChunks < totalChunks) {
+            let start = uploadedChunks * CHUNK_SIZE;
+            let end = Math.min(start + CHUNK_SIZE, file.size);
+            let chunk = file.slice(start, end);
+
+            let formData = new FormData();
+            formData.append('chunk', chunk);
+            formData.append('fileName', file.name);
+            formData.append('chunkNumber', uploadedChunks + 1);
+            formData.append('totalChunks', totalChunks);
+
+            try {
+                await fetch('/upload-chunk', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                uploadedChunks++;
+                document.getElementById('progress').innerText = `Uploaded chunk ${uploadedChunks} of ${totalChunks}`;
+            } catch (error) {
+                alert('Upload failed. Retrying...');
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

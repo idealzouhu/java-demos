@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-boot-file
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10000MB
+      max-request-size: 100000MB
+server:
+  tomcat:
+    connection-timeout: 20000
+    keep-alive-timeout: 15000
+
+
+# 自定义文件上传和下载路径
+upload:
+  path: D:\Learning\java-demos\spring-boot-file\src\main\resources\upload

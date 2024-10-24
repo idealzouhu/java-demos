@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+</head>
+<body>
+
+<h2>Upload a file</h2>
+
+<form id="uploadForm">
+    <label for="file">Choose file to upload:</label>
+    <input type="file" id="file" name="file" required />
+    <br><br>
+    <button type="submit">Upload</button>
+</form>
+
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // 防止表单的默认提交行为
+
+        const fileInput = document.getElementById('file');
+        const formData = new FormData();
+        formData.append('file', fileInput.files[0]);
+
+        // 使用 Fetch API 发送文件到后端
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => alert('File uploaded successfully: ' + data))
+            .catch(error => console.error('Error uploading file:', error));
+    });
+</script>
+
+</body>
+</html>

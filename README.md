@@ -29,6 +29,7 @@
 - [spring-boot-restful-service](./spring-boot-restful-service)：创建一个简单的restful web service项目，熟悉基本的restful web service构建流程。
 
 - [spring-boot-starter](spring-boot-starter) ：自定义 starter， 并测试 starter 的运行情况。
+- [spring-boot-file](spring-boot-file) ：利用 Spring MVC 实现文件分片下载和上传。
 
 
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Download with Chunking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #downloadForm {
+            margin: 20px;
+        }
+        #chunkSize {
+            width: 100px;
+        }
+        #progress {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>File Download with Chunking</h1>
+<div id="downloadForm">
+    <label for="fileName">File Name:</label>
+    <input type="text" id="fileName" placeholder="example.txt" required>
+    <br><br>
+    <label for="chunkSize">Chunk Size (bytes):</label>
+    <input type="number" id="chunkSize" value="1048576" required> <!-- 1 MB -->
+    <br><br>
+    <button id="downloadButton">Download File</button>
+</div>
+<div id="progress">
+    <p>Download Progress: <span id="progressText">0</span>%</p>
+</div>
+
+<script>
+    async function getFileLength(fileName) {
+        const response = await fetch(`download-chunk?fileName=${fileName}`, { method: 'HEAD' });
+        const contentLength = response.headers.get('content-length');
+        return parseInt(contentLength, 10);
+    }
+
+    async function downloadFile(fileName, start, end) {
+        const range = `bytes=${start}-${end}`;
+        const response = await fetch(`download-chunk?fileName=${fileName}`, {
+            method: 'GET',
+            headers: {
+                'Range': range,
+            }
+        });
+
+        if (response.status === 206) {
+            return await response.blob(); // 返回 Blob 数据
+        } else {
+            throw new Error(`Error: ${response.status}`);
+        }
+    }
+
+    async function downloadFileInChunks(fileName, chunkSize) {
+        const fileLength = await getFileLength(fileName);
+        let start = 0;
+        let end = Math.min(chunkSize - 1, fileLength - 1);
+        const totalChunks = Math.ceil(fileLength / chunkSize);
+        let downloadedChunks = 0;
+
+        const blobParts = []; // 存储所有分片的 Blob
+
+        while (start < fileLength) {
+            try {
+                const blob = await downloadFile(fileName, start, end);
+                blobParts.push(blob); // 将分片加入数组
+
+                downloadedChunks++;
+                const progressPercentage = Math.round((downloadedChunks / totalChunks) * 100);
+                document.getElementById('progressText').innerText = progressPercentage;
+
+                start += chunkSize;
+                end = Math.min(start + chunkSize - 1, fileLength - 1);
+            } catch (error) {
+                console.error(`Failed to download chunk: ${error}`);
+                break;
+            }
+        }
+
+        // 所有分片下载完成后，整合成一个 Blob
+        const finalBlob = new Blob(blobParts);
+        const url = URL.createObjectURL(finalBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName; // 设置下载文件名
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url); // 释放内存
+
+        if (start >= fileLength) {
+            alert('Download completed!');
+        }
+    }
+
+    document.getElementById("downloadButton").onclick = function() {
+        const fileName = document.getElementById("fileName").value;
+        const chunkSize = parseInt(document.getElementById("chunkSize").value);
+        downloadFileInChunks(fileName, chunkSize).catch(console.error);
+    };
+</script>
+</body>
+</html>
