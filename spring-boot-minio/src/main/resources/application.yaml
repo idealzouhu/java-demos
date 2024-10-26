@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-boot-minio
+
+# minio 配置
+minio:
+  # 服务地址
+  endpoint: http://localhost:9000
+  # 账号
+  accessKey: minio
+  # 密码
+  secretKey: minio123

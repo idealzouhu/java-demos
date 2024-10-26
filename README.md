@@ -31,6 +31,8 @@
 - [spring-boot-starter](spring-boot-starter) ：自定义 starter， 并测试 starter 的运行情况。
 - [spring-boot-file](spring-boot-file) ：利用 Spring MVC 实现文件分片下载和上传。
 
+- [spring-boot-idempotent](spring-boot-idempotent) ：利用分布式锁实现接口防重复提交，并利用 Redis 去重表实现消息队列防重复消费。
+
 
 
 ### spring-cloud-demos
@@ -51,7 +53,11 @@
 
 - [spring-boot-rocketmq](spring-boot-rocketmq) :  使用 `rocketmq-client-java` 生产和消费不同类型的消息。
 
-- [spring-boot-rocketmq-starter](spring-boot-rocketmq-starter) :  研究 `rocketmq-spring-boot-starter` 的使用方法
+- [spring-boot-rocketmq-starter](spring-boot-rocketmq-starter) :  研究 `rocketmq-spring-boot-starter` 的使用方法。
+
+- [spring-boot-minio](spring-boot-minio)： 给出 MinIO 中间件的使用案例，并使用 Spring AOP 进行配置。
+
+  
 
 
 
