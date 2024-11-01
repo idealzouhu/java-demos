@@ -80,6 +80,8 @@
 
 - [proxy-pattern](design-pattern-demos\proxy-pattern) ：利用 Java 反射实现代理模式。
 
+- [strategy-pattern](design-pattern-demos\strategy-pattern) ：实现策略模式，并利用 IoC 容器自动添加策略类。
+
 
 
 ## 🥀结语
