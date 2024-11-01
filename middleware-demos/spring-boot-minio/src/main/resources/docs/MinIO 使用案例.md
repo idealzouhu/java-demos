@@ -42,8 +42,6 @@ minio/minio:RELEASE.2024-10-02T17-50-41Z-cpuv1 server /data --console-address ":
 
 
 
-
-
 ## 二、MinIO 客户端 ( Java )
 
 对于应用程序开发人员，MinIO 提供了多种语言的 SDK。可以通过 [MinIO 官方文档](https://min.io/docs/minio/linux/developers/minio-drivers.html#java)查看支持的 SDK 列表和使用方法，以便在代码中直接访问 MinIO 服务。

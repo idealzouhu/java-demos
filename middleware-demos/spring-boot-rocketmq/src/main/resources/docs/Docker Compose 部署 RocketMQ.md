@@ -134,7 +134,7 @@ $ docker run -d --name rocketmq-dashboard -e "JAVA_OPTS=-Drocketmq.namesrv.addr=
 
 #### 4.1 导入依赖
 
-创建 Java 项目，导入依赖 `rocketmq-client-java` ，具体版本信息查看[Maven Central: org.apache.rocketmq:rocketmq-client-java (sonatype.com)](https://central.sonatype.com/artifact/org.apache.rocketmq/rocketmq-client-java/versions)
+创建 Java 项目，导入依赖 `rocketmq-client-java` ，具体版本信息查看 [Maven Central: org.apache.rocketmq:rocketmq-client-java (sonatype.com)](https://central.sonatype.com/artifact/org.apache.rocketmq/rocketmq-client-java/versions)
 
 ```
 <dependency>
@@ -156,20 +156,16 @@ $ docker exec -it rmqbroker bash
 
 # 在容器内部使用mqadmin工具更新名为TestTopic的主题配置，使其属于DefaultCluster集群
 $ sh mqadmin updatetopic -t TestTopic -c DefaultCluster
+create topic to 172.18.0.3:10911 success.
+TopicConfig [topicName=TestTopic, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
+rocketmq@15cc0e42b818:~/rocketmq-5.3.0/bin$
+
 
 # 向指定的 NameServer 请求所有注册的 Topic 列表（无需执行）
 $ sh mqadmin topicList -n rmqnamesrv:9876
 ```
 
-具体运行过程为：
 
-```shell
-PS C:\Users\zouhu\Desktop> docker exec -it rmqbroker bash
-rocketmq@15cc0e42b818:~/rocketmq-5.3.0/bin$ sh mqadmin updatetopic -t TestTopic -c DefaultCluster
-create topic to 172.18.0.3:10911 success.
-TopicConfig [topicName=TestTopic, readQueueNums=8, writeQueueNums=8, perm=RW-, topicFilterType=SINGLE_TAG, topicSysFlag=0, order=false, attributes={}]
-rocketmq@15cc0e42b818:~/rocketmq-5.3.0/bin$
-```
 
 
 

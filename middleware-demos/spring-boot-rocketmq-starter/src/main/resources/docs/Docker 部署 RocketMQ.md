@@ -30,7 +30,7 @@ docker run -d -p 9876:9876 --name rmqnamesrv-test foxiswho/rocketmq:server-4.5.1
 
 
 
-## 1.2 Brocker 部署
+## 1.2 Broker 部署
 
 ```
  docker pull foxiswho/rocketmq:broker-4.5.1

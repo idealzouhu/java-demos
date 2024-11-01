@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: spring-boot-canal-redis
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_db?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      password: "123456"
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1ms
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: my-producer_canal-test-topic
+    send-message-timeout: 60000
+    retry-times-when-send-failed: 2
+    retry-times-when-send-async-failed: 2
+#  consumer:
+#    group: my-consumer_canal-test-topic
+
+server:
+  port: 8089

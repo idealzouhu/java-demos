@@ -1,6 +1,6 @@
-<img src="java-demos\java-lock\src\main\resources\images\微信截图_20241026182549.png" alt="描述" width="550" height="350" />
-
-
+<div align="center">
+    <img src="java-demos/java-lock/src/main/resources/images/微信截图_20241026182549.png" alt="描述" width="550" height="350" />
+</div>
 
 ## 😀项目说明
 
@@ -63,6 +63,10 @@
 - [spring-boot-rocketmq-starter](./middleware-demos/spring-boot-rocketmq-starter) :  研究 `rocketmq-spring-boot-starter` 的使用方法，简化消息处理。
 
 - [spring-boot-minio](./middleware-demos/spring-boot-minio)： 展示 MinIO 中间件的使用案例，并使用 Spring AOP 进行配置。
+
+- [spring-boot-canal](middleware-demos\spring-boot-canal) ：给出 Canal 的使用案例。
+
+- [spring-boot-canal-redis](middleware-demos\spring-boot-canal-redis) ：使用 Canal 和 RocketMQ 实现 MySQL 增量数据的异步缓存更新。
 
   
 
