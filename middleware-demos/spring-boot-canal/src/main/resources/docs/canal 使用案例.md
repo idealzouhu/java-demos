@@ -16,13 +16,13 @@ docker run --name mysql-canal ^
 
 
 
-### 1.3 开启 Binlog 写入功能
+### 1.2 开启 Binlog 写入功能
 
 对于自建 MySQL容器 , 我们需要开启 Binlog 写入功能。
 
 
 
-#### 1.3.1创建 binlog 配置文件
+#### 1.2.1创建 binlog 配置文件
 
 在宿主机上创建 `my.cnf` 文件，配置 binlog-format 为 ROW 模式。`my.cnf` 的配置内容如下：
 
@@ -38,7 +38,7 @@ server_id=1
 
 
 
-#### 1.3.2 修改配置文件权限
+#### 1.2.2 修改配置文件权限
 
 进入 MySQL 容器并修改 MySQL 容器配置文件  `/etc/mysql/my.cnf`  权限，以避免权限警告：
 
@@ -61,7 +61,7 @@ $ exit
 
 
 
-#### 1.3.2 挂载配置文件
+#### 1.2.3 挂载配置文件
 
 在 MySQL 容器运行后，使用以下命令将创建的 `my.cnf` 文件挂载到容器内的 `/etc/mysql/my.cnf`：
 
@@ -79,7 +79,7 @@ $ docker restart mysql-canal
 
 
 
-#### 1.3.4 检测 binlog 配置是否成功
+#### 1.2.4 检测 binlog 配置是否成功
 
 进入 MySQL， 利用  `show variables like 'log_bin';`  查看是否打开 binlog 模式：
 
@@ -113,7 +113,7 @@ mysql> mysqlbinlog /var/lib/mysql/mysql-bin.000001
 
 
 
-### 1.4 创建账户并授权
+### 1.3 创建账户并授权
 
 授权 canal 链接 MySQL 账号具有作为 MySQL slave 的权限, 如果已有账户可直接 grant
 
@@ -241,9 +241,9 @@ $ docker run -d ^
 
 
 
-## 四、客户端代码
+## 三、客户端代码
 
-### 4.1 导入依赖
+### 3.1 导入依赖
 
 创建 Spring Boot 项目，并导入以下依赖。
 
@@ -264,7 +264,9 @@ $ docker run -d ^
 
 
 
-### 4.2 简单案例代码
+
+
+### 3.2 简单案例代码
 
 编写简单的案例打印 canal server 解析 binlog 获得的实体类信息， 具体代码如下：
 
@@ -409,9 +411,9 @@ public class SimpleCanalClientExample {
 
 
 
-## 五、测试
+## 四、测试
 
-### 5.1 创建数据库及表
+### 4.1 创建数据库及表
 
 数据库变更：
 
@@ -434,7 +436,7 @@ CREATE TABLE users (
 
 
 
-### 5.2 插入数据
+### 4.2 插入数据
 
 插入语句：
 
@@ -457,7 +459,7 @@ email : bob@example.com    update=true
 
 
 
-### 5.3 更新数据
+### 4.3 更新数据
 
 更新语句：
 

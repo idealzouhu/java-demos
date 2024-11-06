@@ -1,14 +1,14 @@
+[TOC]
+
 ## 一、安装 canal-admin
 
 canal-admin 在 Docker 中的详细安装教程请查看 [Canal Admin Docker · alibaba/canal Wiki](https://github.com/alibaba/canal/wiki/Canal-Admin-Docker)。
 
-canal-admin 文件存放在容器的 `/home/admin/canal-admin` 目录下，目录结构如下：
-
-- 配置文件位于 `/home/admin/canal-admin/conf`
+canal-admin 文件存放在容器的 `/home/admin/canal-admin` 目录下。
 
 
 
-### 2.1 拉取镜像
+### 1.1 拉取镜像
 
 使用以下命令拉取 canal-admin 镜像：
 
@@ -23,11 +23,9 @@ canal-admin 的限定依赖：
 
 
 
+### 1.2 启动 canal-admin 容器(使用脚本)
 
-
-### 2.2 启动 canal-admin 容器(使用脚本)
-
-#### 2.2.1 下载脚本 
+#### 1.2.1 下载脚本 
 
 在 canal 仓库的 docker 目录下自带 `run_admin.sh` 脚本，可以通过 wget 命令来下载  [run_admin.sh](https://github.com/alibaba/canal/blob/master/docker/run_admin.sh) 脚本
 
@@ -63,7 +61,7 @@ eval $cmd
 
 
 
-#### 2.2.2 执行脚本
+#### 1.2.2 执行脚本
 
 使用以下命令执行脚本，启动 canal-admin 容器。
 
@@ -97,7 +95,7 @@ docker run -d --privileged=true -it -h -e server.port=8089 -e spring.datasource.
 
 
 
-#### 2.2.3 初始化元数据库(可选)
+#### 1.2.3 初始化元数据库(可选)
 
 执行 `canal_manager.sql` 文件：
 
@@ -110,11 +108,11 @@ source conf/canal_manager.sql
 
 
 
-### 2.3 启动 canal-admin 容器(直接使用 Docker 命令)
+### 1.3 启动 canal-admin 容器(直接使用 Docker 命令)
 
 在 canal-admin 里面找不到数据库文件被删除，似乎不推荐使用外部数据库。
 
-#### 2.3.1 启动容器
+#### 1.3.1 启动容器
 
 不指定数据库，启动容器。
 
@@ -135,7 +133,7 @@ canal/canal-admin:v1.1.7
 
 
 
-#### 2.3.2 查看启动日志
+#### 1.3.2 查看启动日志
 
 在 canal 启动成功后，查看  admin启动日志为：
 
@@ -161,7 +159,7 @@ canal/canal-admin:v1.1.7
 
 
 
-### 2.4  访问页面
+### 1.4  访问页面
 
 访问 http://127.0.0.1:8089/ ，默认账号密码为 admin/123456 .
 
@@ -496,31 +494,35 @@ canal.mq.topic=canal-test-topic
 
 ### 4.1 查看日志
 
-canal 的日志文件较多
+Canal 的日志文件较多，以下是常用日志的查看方法：
 
 **a.查看 logs/canal/canal.log**
 
-```
+```bash
 docker exec -it canal-server /bin/bash -c "tail -f /home/admin/canal-server/logs/canal/canal.log"
 ```
 
 **b.查看 /logs/canal/rocketmq_client.log**
 
-```
+实时查看 canal 连接 RocketMQ 客户端日志：
+
+```bash
 $ docker exec -it canal-server /bin/bash -c "tail -f /home/admin/canal-server/logs/canal/rocketmq_client.log"
 ```
 
 **c. 查看instance的日志**
 
-```
+查看特定实例的日志，替换 `test` 为你的实例名称：
+
+```bash
 docker exec -it canal-server /bin/bash -c "tail -f /home/admin/canal-server/logs/test/test.log"
 ```
 
 **d.查看instance的 meta.log 日志**
 
-数据库每执行依次一次操作，meta.log 日志中就会生成一条记录。
+每执行一次数据库操作，`meta.log` 日志中会生成一条记录。
 
-```
+```bash
 docker exec -it canal-server /bin/bash -c "tail -f /home/admin/canal-server/logs/test/meta.log"
 ```
 

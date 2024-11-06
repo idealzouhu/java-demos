@@ -30,11 +30,20 @@
 本部分包含使用 Spring Boot 框架创建的各种示例项目，涵盖 AOP、RESTful 服务、文件操作等。
 
 - [spring-boot-helloword](./spring-boot-demos/spring-boot-helloword)：创建 Hello World 项目，了解 Spring Boot 的基本构建流程。
+
 - [spring-boot-aop](./spring-boot-demos/spring-boot-aop) :  AOP 的使用方法 ， 并且给出打印日志的案例。
+
 - [spring-boot-restful-service](./spring-boot-demos/spring-boot-restful-service)：创建一个简单的 RESTful Web 服务项目，熟悉 RESTful 构建流程。
+
 - [spring-boot-starter](./spring-boot-demos/spring-boot-starter) ：自定义 Starter， 并测试 Starter 的运行情况。
+
+- [spring-boot-convention](spring-boot-demos\spring-boot-convention) ：抽象异常码、异常、前后端响应实体，并利用 `@RestControllerAdvice` 和 `@ExceptionHandler` 来实现全局异常处理。
+
 - [spring-boot-file](./spring-boot-demos/spring-boot-file) ：利用 Spring MVC 实现文件分片下载和上传。
+
 - [spring-boot-idempotent](./spring-boot-demos/spring-boot-idempotent) ：利用分布式锁实现接口防重复提交，并利用 Redis 去重表实现消息队列防重复消费。
+
+  
 
 
 
