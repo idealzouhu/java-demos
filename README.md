@@ -37,6 +37,8 @@
 
 - [spring-boot-starter](./spring-boot-demos/spring-boot-starter) ：自定义 Starter， 并测试 Starter 的运行情况。
 
+- [spring-boot-interceptor-filter](spring-boot-demos\spring-boot-interceptor-filter) ：给出拦截器和过滤器的使用案例，并分析这两者之间的区别。
+
 - [spring-boot-convention](spring-boot-demos\spring-boot-convention) ：抽象异常码、异常、前后端响应实体，并利用 `@RestControllerAdvice` 和 `@ExceptionHandler` 来实现全局异常处理。
 
 - [spring-boot-file](./spring-boot-demos/spring-boot-file) ：利用 Spring MVC 实现文件分片下载和上传。
