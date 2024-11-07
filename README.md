@@ -45,11 +45,11 @@
 
 - [spring-boot-file](./spring-boot-demos/spring-boot-file) ：利用 Spring MVC 实现文件分片下载和上传。
 
+- [spring-boot-token](spring-boot-demos\spring-boot-token) ：给出 token 的简单使用案例，后续还带完善。
+
 - [spring-boot-idempotent](./spring-boot-demos/spring-boot-idempotent) ：利用分布式锁实现接口防重复提交，并利用 Redis 去重表实现消息队列防重复消费。
 
   
-
-
 
 ### **(3) spring-cloud-demos**
 
