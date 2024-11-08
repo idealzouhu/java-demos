@@ -81,6 +81,8 @@
 
 - [spring-boot-canal-redis](middleware-demos\spring-boot-canal-redis) ：使用 Canal 和 RocketMQ 实现 MySQL 增量数据的异步缓存更新。
 
+- [java-json](middleware-demos\java-json) ：利用 Jackson 和 Fastjson 2.0 来处理 JSON 数据结构。
+
   
 
 ### **(5) design-pattern-demos**
