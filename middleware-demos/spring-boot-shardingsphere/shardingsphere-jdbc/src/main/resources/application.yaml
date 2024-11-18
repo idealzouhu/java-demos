@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-boot-shardingsphere
+
+  datasource:
+    # 指定 ShardingSphere 自定义驱动类
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    # 指定 ShardingSphere 自定义配置文件路径地址
+    url: jdbc:shardingsphere:classpath:shardingsphere-config.yaml
+
+mybatis:
+  # 配置mapper.xml文件位置
+  mapper-locations: classpath:mapper/*.xml

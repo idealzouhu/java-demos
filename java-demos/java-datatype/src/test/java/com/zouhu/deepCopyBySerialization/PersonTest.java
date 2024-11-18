@@ -1,5 +1,7 @@
 package com.zouhu.deepCopyBySerialization;
 
+import com.zouhu.copy.deepCopyBySerialization.Address;
+import com.zouhu.copy.deepCopyBySerialization.Person;
 import org.junit.Test;
 
 import java.io.IOException;

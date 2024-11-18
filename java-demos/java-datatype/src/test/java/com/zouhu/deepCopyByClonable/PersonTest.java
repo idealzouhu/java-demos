@@ -1,8 +1,8 @@
 package com.zouhu.deepCopyByClonable;
 
+import com.zouhu.copy.deepCopyByClonable.Address;
+import com.zouhu.copy.deepCopyByClonable.Person;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class PersonTest {
 

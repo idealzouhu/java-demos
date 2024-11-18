@@ -1,6 +1,4 @@
-package com.zouhu.deepCopyByClonable;
-
-import java.io.*;
+package com.zouhu.copy.deepCopyByClonable;
 
 /**
  * 用于测试深拷贝

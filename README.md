@@ -81,7 +81,9 @@
 
 - [spring-boot-canal-redis](middleware-demos\spring-boot-canal-redis) ：使用 Canal 和 RocketMQ 实现 MySQL 增量数据的异步缓存更新。
 
-- [java-json](middleware-demos\java-json) ：利用 Jackson 和 Fastjson 2.0 来处理 JSON 数据结构。
+- [spring-boot-shardingsphere](middleware-demos\spring-boot-shardingsphere) ：使用 shardingsphere 实现分库分表，其主要核心功能是将 Logic SQL 转换为 Actual SQL。
+
+- [java-json](middleware-demos\java-json) ：利用 Jackson 和 Fastjson 2.0 来处理 JSON 数据，从而替换有缺陷的 Java 自身序列化。 
 
   
 

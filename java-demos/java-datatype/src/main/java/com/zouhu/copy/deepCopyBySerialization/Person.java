@@ -1,4 +1,4 @@
-package com.zouhu.deepCopyBySerialization;
+package com.zouhu.copy.deepCopyBySerialization;
 
 import java.io.*;
 

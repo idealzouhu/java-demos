@@ -1,4 +1,4 @@
-package com.zouhu.deepCopyByClonable;
+package com.zouhu.copy.deepCopyByClonable;
 
 import java.io.Serializable;
 
