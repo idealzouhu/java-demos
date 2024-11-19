@@ -1,10 +1,10 @@
-package com.zouhu.springboot.shardingsphere;
+package com.zouhu.shardingspherejdbc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootShardingsphereApplicationTests {
+class ShardingsphereJdbcApplicationTests {
 
 	@Test
 	void contextLoads() {

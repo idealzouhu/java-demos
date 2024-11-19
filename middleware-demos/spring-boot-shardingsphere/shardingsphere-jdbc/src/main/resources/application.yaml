@@ -8,6 +8,13 @@ spring:
     # 指定 ShardingSphere 自定义配置文件路径地址
     url: jdbc:shardingsphere:classpath:shardingsphere-config.yaml
 
+#  # 不使用 sharding-jdbc，测试 Mybaits 是否能正常运行
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/demo_ds0?useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
 mybatis:
   # 配置mapper.xml文件位置
   mapper-locations: classpath:mapper/*.xml

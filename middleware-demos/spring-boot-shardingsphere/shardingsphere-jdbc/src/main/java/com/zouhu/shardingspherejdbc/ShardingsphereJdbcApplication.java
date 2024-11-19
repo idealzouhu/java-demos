@@ -1,13 +1,13 @@
-package com.zouhu.springboot.shardingsphere;
+package com.zouhu.shardingspherejdbc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootShardingsphereApplication {
+public class ShardingsphereJdbcApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootShardingsphereApplication.class, args);
+		SpringApplication.run(ShardingsphereJdbcApplication.class, args);
 	}
 
 }

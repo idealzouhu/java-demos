@@ -1,4 +1,4 @@
-package com.zouhu.springboot.shardingsphere.entity;
+package com.zouhu.shardingspherejdbc.entity;
 
 /**
  * @author zouhu
@@ -7,7 +7,6 @@ package com.zouhu.springboot.shardingsphere.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 

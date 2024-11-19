@@ -6,8 +6,6 @@ Apache ShardingSphere 是一款分布式 SQL 事务和查询引擎，可通过�
 
 
 
-
-
 ### 1.2 设计哲学
 
 ShardingSphere 采用 **Database Plus 设计哲学**，该理念致力于构建数据库上层的标准和生态，在生态中补充数据库所缺失的能力。
@@ -69,14 +67,6 @@ ShardingSphere-Proxy 定位为<font color="blue">透明化的数据库代理端�
 | 性能       | 损耗低              | 损耗略高             |
 | 无中心化   | 是                  | 否                   |
 | 静态入口   | 无                  | 有                   |
-
-
-
-
-
-
-
-## 三、数据分片功能
 
 
 

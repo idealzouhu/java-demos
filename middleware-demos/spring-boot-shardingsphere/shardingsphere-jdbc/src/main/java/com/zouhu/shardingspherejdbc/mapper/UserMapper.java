@@ -1,6 +1,7 @@
-package com.zouhu.springboot.shardingsphere.mapper;
+package com.zouhu.shardingspherejdbc.mapper;
 
-import com.zouhu.springboot.shardingsphere.entity.User;
+
+import com.zouhu.shardingspherejdbc.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
