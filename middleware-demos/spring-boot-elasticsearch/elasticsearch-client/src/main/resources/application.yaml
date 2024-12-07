@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: elasticsearch-client
+
+# 打印 es 的 http 请求，适合在开发调试中使用，正式环境请关闭
+logging:
+  level:
+    tracer: TRACE

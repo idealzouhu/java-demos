@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: elasticsearch-starter
+
+  # es 配置
+  elasticsearch:
+    uris: http://localhost:9200   # Elasticsearch 服务地址
+    username: elastic             # 用户名（如果有权限）
+    password: Elastic@123456      # 密码（如果有权限）
+
+# 打印 es 的 http 请求，适合在开发调试中使用，正式环境请关闭
+logging:
+  level:
+    tracer: TRACE

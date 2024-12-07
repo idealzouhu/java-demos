@@ -83,6 +83,8 @@
 
 - [spring-boot-shardingsphere](middleware-demos\spring-boot-shardingsphere) ：使用 shardingsphere 实现分库分表，其主要核心功能是将 Logic SQL 转换为 Actual SQL。
 
+- [spring-boot-elasticsearch](middleware-demos\spring-boot-elasticsearch) ：整理 elasticsearch 的语法，并给出 elasticsearch-client 和 elasticsearch-starter 的使用案例。
+
 - [java-json](middleware-demos\java-json) ：利用 Jackson 和 Fastjson 2.0 来处理 JSON 数据，从而替换有缺陷的 Java 自身序列化。 
 
   

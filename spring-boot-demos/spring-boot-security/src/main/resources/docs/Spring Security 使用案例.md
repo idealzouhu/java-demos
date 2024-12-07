@@ -61,12 +61,6 @@ Date: Thu, 07 Nov 2024 03:16:39 GMT
 
 
 
-curl -i http://localhost:8080/admin/secure
-
-curl -i  -u user1:123456 http://localhost:8080/admin/secure
-
-
-
 **(2) 验证身份的请求**
 
 提供用户名 `user` 和生成的密码后，可以成功通过身份验证。若请求的资源不存在，Spring Boot 将返回 `404 Not Found`：

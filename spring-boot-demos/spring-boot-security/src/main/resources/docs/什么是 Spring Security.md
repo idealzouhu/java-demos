@@ -41,6 +41,8 @@ Spring Security 提供针对常见漏洞的保护。
 
 
 
+
+
 ## 三、授权 authorization
 
 [授权](https://docs.spring.io/spring-security/reference/features/authorization/index.html) 是决定某人是否能允许访问特定资源(request 和 method)。
@@ -49,8 +51,11 @@ Spring Security 提供针对常见漏洞的保护。
 
 
 
-### 基于请求的授权
+### 3.1 基于请求的授权
 
 [工作原理](https://docs.spring.io/spring-security/reference/servlet/authorization/authorize-http-requests.html)如下图所示。
 
 ![authorizationfilter](images/authorizationfilter.png)
+
+
+
