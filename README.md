@@ -69,8 +69,6 @@
 
 - [spring-boot-mybatis](./middleware-demos/spring-boot-mybatis) ：使用 `mybatis` 依赖来查询数据库，深入研究 MyBatis 框架的应用。
 
-- [spring-boot-mybatis-starter](./middleware-demos/spring-boot-mybatis-starter) : 使用 `mybatis-spring-boot-starter` 依赖进行数据库查询。
-
 - [spring-boot-rocketmq](./middleware-demos/spring-boot-rocketmq) :  使用 `rocketmq-client-java` 依赖，生产和消费不同类型的消息。
 
 - [spring-boot-rocketmq-starter](./middleware-demos/spring-boot-rocketmq-starter) :  研究 `rocketmq-spring-boot-starter` 的使用方法，简化消息处理。
