@@ -75,15 +75,15 @@
 
 - [spring-boot-minio](./middleware-demos/spring-boot-minio)： 展示 MinIO 中间件的使用案例，并使用 Spring AOP 进行配置。
 
-- [spring-boot-canal](middleware-demos\spring-boot-canal) ：给出 Canal 的使用案例。
+- [spring-boot-canal](./middleware-demos/spring-boot-canal) ：给出 Canal 的使用案例。
 
-- [spring-boot-canal-redis](middleware-demos\spring-boot-canal-redis) ：使用 Canal 和 RocketMQ 实现 MySQL 增量数据的异步缓存更新。
+- [spring-boot-canal-redis](./middleware-demos/spring-boot-canal-redis) ：使用 Canal 和 RocketMQ 实现 MySQL 增量数据的异步缓存更新。
 
-- [spring-boot-shardingsphere](middleware-demos\spring-boot-shardingsphere) ：使用 shardingsphere 实现分库分表，其主要核心功能是将 Logic SQL 转换为 Actual SQL。
+- [spring-boot-shardingsphere](./middleware-demos/spring-boot-shardingsphere) ：使用 shardingsphere 实现分库分表，其主要核心功能是将 Logic SQL 转换为 Actual SQL。
 
-- [spring-boot-elasticsearch](middleware-demos\spring-boot-elasticsearch) ：整理 elasticsearch 的语法，并给出 elasticsearch-client 和 elasticsearch-starter 的使用案例。
+- [spring-boot-elasticsearch](./middleware-demos/spring-boot-elasticsearch) ：整理 elasticsearch 的语法，并给出 elasticsearch-client 和 elasticsearch-starter 的使用案例。
 
-- [java-json](middleware-demos\java-json) ：利用 Jackson 和 Fastjson 2.0 来处理 JSON 数据，从而替换有缺陷的 Java 自身序列化。 
+- [java-json](./middleware-demos/java-json) ：利用 Jackson 和 Fastjson 2.0 来处理 JSON 数据，从而替换有缺陷的 Java 自身序列化。 
 
   
 
@@ -93,11 +93,11 @@
 
 - [singeleton-pattern](./design-pattern-demos/singeleton-pattern) ：分析懒汉式单例模式和饿汉式单例模式的使用及其优缺点。
 
-- [builder-pattern](design-pattern-demos/builder-pattern) ：研究建造者模式及 @Builder 注解的使用，简化复杂对象的创建。
+- [builder-pattern](./design-pattern-demos/builder-pattern) ：研究建造者模式及 @Builder 注解的使用，简化复杂对象的创建。
 
-- [proxy-pattern](design-pattern-demos\proxy-pattern) ：利用 Java 反射实现代理模式。
+- [proxy-pattern](./design-pattern-demos/proxy-pattern) ：利用 Java 反射实现代理模式。
 
-- [strategy-pattern](design-pattern-demos\strategy-pattern) ：实现策略模式，并利用 IoC 容器自动添加策略类。
+- [strategy-pattern](./design-pattern-demos/strategy-pattern) ：实现策略模式，并利用 IoC 容器自动添加策略类。
 
 
 
